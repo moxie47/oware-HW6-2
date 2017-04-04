@@ -19,7 +19,7 @@ public class Pit
 	
 	public static void main(String[] args)
 	{
-		
+		// test the Pit...
 
 	}
 
