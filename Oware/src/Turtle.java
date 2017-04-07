@@ -1,14 +1,5 @@
-
-
 import java.awt.Color;
 
-/**
- * Lab 3-5 helper: Turtle.java
- * 
- * From Sedgewick and Wayne's site...
- * 
- *
- */
 public class Turtle
 {
 	private double x, y; // turtle is at (x, y)
@@ -19,6 +10,9 @@ public class Turtle
 	// start at (x0, y0), facing a0 degrees counterclockwise from the x-axis
 	public Turtle(double x0, double y0, double a0)
 	{
+		setCanvasSize(600, 600);
+		setXscale(-300, 300);
+		setYscale(-300, 300);
 		x = x0;
 		y = y0;
 		angle = a0;
@@ -92,10 +86,11 @@ public class Turtle
 	// sample client for testing
 	public static void main(String[] args)
 	{
-		double x0 = 0.5;
+		
+		double x0 = 0.0;
 		double y0 = 0.0;
 		double a0 = 60.0;
-		double step = Math.sqrt(3) / 2;
+		double step = 100*Math.sqrt(3) / 2;
 		
 		Turtle turtle = new Turtle(x0, y0, a0);
 		
