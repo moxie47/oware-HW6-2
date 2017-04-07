@@ -1,5 +1,5 @@
 
-public class MoveResult
+public class Move
 {
 	// return results from 
 	

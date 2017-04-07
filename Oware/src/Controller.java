@@ -14,11 +14,11 @@ public class Controller
 	
 	private Pit active;
 	
-	public MoveResult makeMoveForCupNumber (int pitNumber)
+	public Move makeMoveForCupNumber (int pitNumber)
 	{
 		active = Board.getPit(pitNumber);
 		
-		return new MoveResult();
+		return new Move();
 	}
 
 }
