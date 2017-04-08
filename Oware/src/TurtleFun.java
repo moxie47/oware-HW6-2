@@ -21,7 +21,7 @@ public class TurtleFun
 			t.setPenColor(Color.BLACK);
 			break;
 		case 1:
-			t.setPenColor(Color.RED);
+			t.setPenColor(Color.GREEN);
 			break;
 		case 2:
 			t.setPenColor(Color.BLACK);
