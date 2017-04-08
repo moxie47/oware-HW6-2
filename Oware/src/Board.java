@@ -1,11 +1,10 @@
 
 public class Board
 {
-	private static Pit[] allPits;
-	static
-	{
+	private final Pit[] allPits; 
+	
+	public Board(){
 		allPits = new Pit[12];
-
 	}
 
 	public static void main(String[] args)
@@ -14,7 +13,7 @@ public class Board
 
 	}
 
-	public static Pit getPit(int pitnum)
+	public Pit getPit(int pitnum)
 	{
 		return allPits[pitnum];
 	}
