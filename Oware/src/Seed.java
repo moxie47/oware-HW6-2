@@ -1,4 +1,5 @@
 
-public class Seed {
+public class Seed
+{
 
 }
