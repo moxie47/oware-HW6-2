@@ -30,5 +30,8 @@ public class Board
 	{
 		return allPits[pitnum];
 	}
-
+	
+	public boolean hasValidMoves(){
+		return true;
+	}
 }
