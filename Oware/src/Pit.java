@@ -9,6 +9,7 @@ public class Pit
 	
 	public Pit(int ID, int rowNum)
 	{
+		this.numSeeds = 4;
 		this.ID=ID;
 		this.rowNum=rowNum;
 	}

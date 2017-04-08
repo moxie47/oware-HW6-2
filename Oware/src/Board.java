@@ -1,9 +1,11 @@
 
 public class Board
 {
-	private final Pit[] allPits; 
 	
-	public Board(){
+	private Pit[] allPits;
+	
+	public Board()
+	{
 		allPits = new Pit[12];
 		for (int i=0;i<12; i++) {
 			Pit newPit = new Pit(i, (int) i/6);

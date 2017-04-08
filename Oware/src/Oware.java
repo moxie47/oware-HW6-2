@@ -1,6 +1,6 @@
 
 public class Oware
-{
+{ 
 	private final Controller controller;
 	
 	public Oware(){
