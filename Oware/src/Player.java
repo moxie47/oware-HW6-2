@@ -8,6 +8,11 @@ public class Player
 	public Player(boolean isHuman){
 		this.isHuman=isHuman;
 	}
+	
+	public boolean isHuman() {
+		return isHuman;
+	}
+
 	public Storehouse getStore() {
 		return store;
 	}

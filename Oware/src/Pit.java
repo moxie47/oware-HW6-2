@@ -65,12 +65,12 @@ public class Pit
 	 */
 	private int sowSeed(int seedsToSow){
 		this.numSeeds++;
-		
+ 
 		if (seedsToSow ==1) {
 			return this.ID;
 		} else {
 			StdOut.println("Processing next pit=> " + this.nextPit.getID());
-			return this.nextPit.sowSeed(seedsToSow--);
+			return this.nextPit.sowSeed(--seedsToSow);
 		}
 		
 	}

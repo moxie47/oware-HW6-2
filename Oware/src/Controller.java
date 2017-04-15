@@ -4,9 +4,9 @@ public class Controller
 
 	private final Player player0;
 	private final Player player1;
-	private int playerToMove;
+	private int playerToMove; //0 or 1 - current index of the array
 	private final Player[] players;
-	private final Board board;
+	private final Board board; 
 	
 	public Controller() {
 		this.player0 = new Player(true);
@@ -20,12 +20,17 @@ public class Controller
 
 	}
 
-	private Pit active;
-
+	public Player getPlayerToMove() {
+		return players[playerToMove];
+	}
+	
+	public void movePlayToNextPlayer() {
+		this.playerToMove = ++playerToMove%2;
+	}
+	
 	public boolean makeMoveStartingAt(int pitNumber)
 	{
-		//active = Board.getPit(pitNumber);
-		active = board.getPit(pitNumber);
+		Pit active = board.getPit(pitNumber);
 		StdOut.println("Move starts at pit number " + pitNumber);
 
 		int numSeeds = active.getNumSeeds();
