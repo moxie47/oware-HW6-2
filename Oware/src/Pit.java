@@ -47,6 +47,33 @@ public class Pit
 	public int getRowNum() {
 		return rowNum;
 	}
+	
+	/**
+	 * return the pit number of the final pit
+	 */
+	
+	public int startSowing() {
+		int seedsToSow = this.numSeeds;
+		StdOut.println("Sowing " + seedsToSow + " seeds.");
+		
+		return this.nextPit.sowSeed(seedsToSow);
+	}
+	
+	/**
+	 * sows one seed in a recursive wa
+	 * @return the pit number of the last pit.
+	 */
+	private int sowSeed(int seedsToSow){
+		this.numSeeds++;
+		
+		if (seedsToSow ==1) {
+			return this.ID;
+		} else {
+			StdOut.println("Processing next pit=> " + this.nextPit.getID());
+			return this.nextPit.sowSeed(seedsToSow--);
+		}
+		
+	}
 
 	public static void main(String[] args)
 	{

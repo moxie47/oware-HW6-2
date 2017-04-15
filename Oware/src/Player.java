@@ -13,12 +13,7 @@ public class Player
 	}
 
 	public int getScore() {
-		return this.store.
-	}
-	public static void main(String[] args)
-	{
-		// TODO Auto-generated method stub
-
-	}
+		return this.store.getNumSeeds();
+	} 
 
 }

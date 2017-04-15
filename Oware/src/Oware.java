@@ -19,7 +19,7 @@ public class Oware
 
 	}
 	public void play(){
-		while (controller.gameNotOver()){
+		while (controller.isGameOver()){
 			
 		}
 	}
