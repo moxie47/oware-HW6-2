@@ -42,12 +42,6 @@ public class Controller
 		//check scoring opportunities at lastpit?
 		return true;
 	}
-	
-	private Player nextPlayer() {
-		int playerToMove = (this.playerToMove +1) % 1;
-		return this.players[playerToMove];
-				
-	}
 
 	public boolean isGameOver() {
 		return player0.getScore()>24 || player1.getScore()>24 || !board.hasValidMoves();
