@@ -39,8 +39,10 @@ public class Controller
 		StdOut.println("Sowing in ccw direction...");
 		
 		StdOut.println("All seeds sown.");
-		//check scoring opportunities at lastpit?
-		return true;
+
+    board.printAll();
+
+    return true;
 	}
 
 	public boolean isGameOver() {

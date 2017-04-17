@@ -21,6 +21,24 @@ public class Board
 		}
 		
 	}
+	
+	public void printAll()
+	{
+		StdOut.println ("\n#   11  -  10  -   9  -   8  -   7  -   6    #");	
+		StdOut.print("|<-");
+		
+		for (int i=11; i>5; i--)
+			StdOut.printf  (" %2d <- ", allPits[i].getNumSeeds());
+		
+		StdOut.println("|\n|    ===================================     |");
+		StdOut.print("|->");
+		
+		for (int i=0; i<6; i++)
+			StdOut.printf  (" %2d -> ", allPits[i].getNumSeeds());
+		StdOut.println("|");
+		
+		StdOut.println ("#    0  -   1  -   2  -   3  -   4  -   5    #");		
+
 
 	public static void main(String[] args)
 	{
