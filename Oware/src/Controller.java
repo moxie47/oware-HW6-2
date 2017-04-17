@@ -43,6 +43,8 @@ public class Controller
 		
 		StdOut.println("All seeds sown.");
 		
+		board.printAll();
+		
 		return true;
 	}
 
