@@ -2,41 +2,18 @@
 public class Pit
 {
 	private int numSeeds;
-	private Pit next;
-	private Pit previous;
-	private int pitNumber;
+	private final int ID;
+	private Pit nextPit;
+	private Pit prevPit;
+	private final int rowNum;
+	
+	public Pit(int ID, int rowNum)
+	{
+		this.numSeeds = 4;
+		this.ID=ID;
+		this.rowNum=rowNum;
+	}
 
-	public Pit(int pnum)
-	{
-		numSeeds = 4;
-		pitNumber = pnum;
-	}
-	
-	public void setPrevious(Pit p)
-	{
-		previous = p;
-	}
-	
-	public void setNext(Pit p)
-	{
-		next = p;
-	}
-	
-	public Pit getNext()
-	{
-		return next;
-	}
-	
-	public Pit getPrevious()
-	{
-		return previous;
-	}
-	
-	public int getPitNumber()
-	{
-		return pitNumber;
-	}
-	
 	public int getNumSeeds()
 	{
 		return this.numSeeds;
@@ -47,25 +24,62 @@ public class Pit
 		this.numSeeds = num;
 	}
 
-	public int getAllSeeds()
-	{
-		// get and remove all seeds
+	public Pit getNextPit() {
+		return nextPit;
+	}
+
+	public void setNextPit(Pit nextPit) {
+		this.nextPit = nextPit;
+	}
+
+	public Pit getPrevPit() {
+		return prevPit;
+	}
+
+	public void setPrevPit(Pit prevPit) {
+		this.prevPit = prevPit;
+	}
+
+	public int getID() {
+		return ID;
+	}
+
+	public int getRowNum() {
+		return rowNum;
+	}
+	
+	/**
+	 * return the pit number of the final pit
+	 */
+	
+	public int startSowing() {
+		int seedsToSow = this.numSeeds;
+		StdOut.println("Sowing " + seedsToSow + " seeds.");
 		
-		int temp = numSeeds;
-		numSeeds = 0;
-		return temp;
+		return this.nextPit.sowSeed(seedsToSow);
 	}
 	
-	public void sowOneSeed()
-	{
-		numSeeds++;
+	/**
+	 * sows one seed in a recursive wa
+	 * @return the pit number of the last pit.
+	 */
+	private int sowSeed(int seedsToSow){
+		this.numSeeds++;
+ 
+		if (seedsToSow ==1) {
+			return this.ID;
+		} else {
+			StdOut.println("Processing next pit=> " + this.nextPit.getID());
+			return this.nextPit.sowSeed(--seedsToSow);
+		}
+		
 	}
-	
+
 	public static void main(String[] args)
 	{
 		// test the Pit...
 
-		Pit test = new Pit(0);
+		Pit test = new Pit(3,1);
 		test.setNumSeeds(4);
 
 	}

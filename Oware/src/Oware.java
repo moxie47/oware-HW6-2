@@ -1,17 +1,13 @@
+import java.util.Random;
 
 public class Oware
-{
-	// the GUI!
-	private static Board board;
-	private static Controller controller;
+{ 
+	private final Controller controller;
 	
-	/*      11 10 9 8 7 6
-	 * 		 p  p p p p p
-	 * 
-	 * 		 0  1 2 3 4 5
-	 * 		 p  p p p p p 
-	 */
-	
+	public Oware(){
+		this.controller=new Controller();
+	}
+
 	public static void main(String[] args)
 	{
 		StdOut.println("Welcome to Oware.");
@@ -19,15 +15,26 @@ public class Oware
 		StdOut.println("https://github.com/evlevel/oware repo");
 		StdOut.println("into their own GitHub clone...");
 		
-		StdOut.println("Initializing...");
+		Oware game = new Oware();
 		
-		board = new Board();
-		controller = new Controller(board);
-		
-		StdOut.println("make a move with pit 0");
-		
-		controller.makeMoveStartingAt(0);
-		
+		game.play();
 	}
-
+	public void play(){
+		while (!controller.isGameOver()){
+			int pitNumber;
+			//Human has pits 0-5 and computer has pits 6-11.
+			if (controller.getPlayerToMove().isHuman()){
+				StdOut.println("enter Pit NUmber to sow from");
+				pitNumber = StdIn.readInt();
+				
+			} else {
+				Random r = new Random();
+				int Low = 6;
+				int High = 11;
+				pitNumber = r.nextInt(High-Low) + Low; 
+			}
+			controller.makeMoveStartingAt(pitNumber);
+			controller.movePlayToNextPlayer();
+		}
+	}
 }
